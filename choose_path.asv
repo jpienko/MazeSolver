@@ -1,4 +1,4 @@
-function [chosen_path, last, now,maze1] = choose_path(maze1,now,last,neighbours,possibility,possibilities)
+function [chosen_path, last, now, maze1] = choose_path(maze1,now,last,neighbours,possibility,possibilities)
 
 chosen_path = [0 0 0 0];
 ones = find(possibilities,1);

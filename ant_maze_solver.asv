@@ -33,18 +33,14 @@ maze1 = maze;
 
 %% choose path
 
-is_t = true; 
+is_t = true;
 now = find_start(maze);
 last = now;
-while(is_t)
-   
-    neighbours = determine_neighbourhood(maze1,now);
-    possibilities = search_for_path(maze1, neighbours);
-    possibility = determine_possibility(pheromone, neighbours);
+neighbours = determine_neighbourhood(maze1,now);
+possibilities = search_for_path(maze1, neighbours);
+possibility = determine_possibility(pheromone, neighbours);
 
-    [check, last, now,maze1] = choose_path(maze1,now,last,neighbours,possibility,possibilities);
-    if length(find(check==0))~=4
-        [now,last,maze1]  = move_ant;
-    end
-    maze1 = eliminate(maze1,last,possibilities);
+[check, last, now] = choose_path(maze1,now,last,neighbours,possibility,possibilities)
+if length(find(check==0))=4
+    
 end
