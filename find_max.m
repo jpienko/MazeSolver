@@ -12,4 +12,7 @@ maxP = max(neighbours_pheromone);
 maxIndex = find(neighbours_pheromone==maxP);
 last = now;
 now = [neighbours(1,maxIndex),neighbours(2,maxIndex)];
+if now(1)==0|| now(2)==0
+    display('Something went wrong with matlab comparison')
+end
 end

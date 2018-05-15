@@ -1,4 +1,4 @@
-function [pheromone,path_length,path]= distribute_pheromone(maze1,pheromone_per_ant)
+function [pheromone,total_path,path]= distribute_pheromone(maze1,pheromone_per_ant)
 sizeMaze = size(maze1);
 pheromone = zeros(size(maze1));
 path_length = 0;
@@ -13,6 +13,7 @@ for i=1:sizeMaze(1)
         end
         if maze1(i,j)==-1
             path_length2 = path_length2 + 0.25;
+            path(i,j) = 1;
         end
     end
 end
